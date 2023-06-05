@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+pyfile=$PYFILE
+output_file="${pyfile.*}.pyc"
+
+echo "Compiling $pyfile ..."
+python3 -m compileall -b "$pyfile" > /dev/null 2>&1
+
+if [ -f "$output_file" ]; then
+   echo "$output_file successfully created."
+else
+   echo "Failed to compile $pyfile."
+fi
