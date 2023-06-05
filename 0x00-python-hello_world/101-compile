@@ -6,10 +6,3 @@ output_file="${pyfile%.py}.pyc"
 echo "Compiling $pyfile ..."
 echo -e "#!/usr/bin/python3\n" | cat - "$pyfile" | \
 	     python3 -m compileall -b "$pyfile" > /dev/null 2>&1
-
-if [ -f "$output_file" ]; then
-   echo "$output_file successfully created."
-else
-   echo "Failed to compile $pyfile."
-   exit 1
-fi
