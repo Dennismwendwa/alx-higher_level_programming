@@ -10,7 +10,7 @@ void free_listint(listint_t *head);
 listint_t *add_nodeint(listint_t **head, const int n);
 
 /**
-  * struct listint_t - linked list
+  * struct listint_s - linked list
   * @n: number member
   * @next: node of the lst
   * Description: linked list node strct
