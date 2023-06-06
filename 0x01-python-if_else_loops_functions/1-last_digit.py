@@ -3,9 +3,10 @@ import random
 
 number = random.randint(-10000, 10000)
 
-num = repr(number)
-last = num[-1]
-last_d = int(last)
+if number < 0:
+    last_d = number % -10
+else:
+    last_d = number % 10
 str = f"Last digit of {number} is {last_d}"
 
 if number >= 0:
