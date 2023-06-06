@@ -16,6 +16,6 @@ if number >= 0:
     elif last_d < 6 and last_d != 0:
         print(f"{str} and is less than 6 and not 0")
 else:
-    last_d = -int(last)
+    last_d = number % -10
     str = f"Last digit of {number} is {last_d}"
     print(f"{str} and is less than 6 and not 0")
