@@ -9,6 +9,6 @@ nams = list(obj)
 
 for nam in nams:
     if nam[0] == "_":
-        break
+        continue
 
         print("{:s}".format(nam))
