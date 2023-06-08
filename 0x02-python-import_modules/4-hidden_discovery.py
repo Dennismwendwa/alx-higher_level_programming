@@ -9,5 +9,5 @@ nams = list(obj)
 
 for nam in nams:
     if nam[0] is not "-":
-        break
+
         print("{:s}".format(nam))
