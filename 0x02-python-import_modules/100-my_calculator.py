@@ -8,17 +8,17 @@ if __name__ == "__main__":
 if len(argv) == 4:
     operator = argv[2]
 
-    a = int(argv[1])
-    b = int(argv[3])
+    a = (argv[1])
+    b = (argv[3])
     match operator:
         case "+":
-            print("{} + {} = {}".format(a, b, add(a, b)))
+            print("{} + {} = {}".format(a, b, add(int(a), int(b))))
         case "-":
-            print("{} - {} = {}".format(a, b, sub(a, b)))
+            print("{} - {} = {}".format(a, b, sub(int(a), int(b))))
         case "*":
-            print("{} * {} = {}".format(a, b, mul(a, b)))
+            print("{} * {} = {}".format(a, b, mul(int(a), int(b))))
         case "/":
-            print("{}  {} = {}".format(a, b, div(a, b)))
+            print("{}  {} = {}".format(a, b, div(int(a), int(b))))
         case _:
             print("{}".format("Unknown operator. Available operators:\
  +, -, * and /"))
