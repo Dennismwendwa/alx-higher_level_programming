@@ -12,17 +12,17 @@ if len(argv) != 4:
 
 operator = argv[2]
 
-a = (argv[1])
-b = (argv[3])
+a = int(argv[1])
+b = int(argv[3])
 match operator:
     case "+":
-        print("{} + {} = {}".format(a, b, add(int(a), int(b))))
+        print("{} + {} = {}".format(a, b, add(a, b)))
     case "-":
-        print("{} - {} = {}".format(a, b, sub(int(a), int(b))))
+        print("{} - {} = {}".format(a, b, sub(a, b)))
     case "*":
-        print("{} * {} = {}".format(a, b, mul(int(a), int(b))))
+        print("{} * {} = {}".format(a, b, mul(a, b)))
     case "/":
-        print("{} / {} = {}".format(a, b, div(int(a), int(b))))
+        print("{} / {} = {}".format(a, b, div(a, b)))
     case _:
         print("{}".format("Unknown operator. Available operators:\
  +, -, * and /"))
