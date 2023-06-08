@@ -1,5 +1,5 @@
 
-#include "main.h"
+#include "lists.h"
 
 /**
   * check_cycle - function that checks linked list cycle
