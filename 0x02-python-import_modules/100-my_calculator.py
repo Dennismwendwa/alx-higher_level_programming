@@ -19,8 +19,9 @@ if len(argv) == 4:
             print("{:d} * {:d} = {:d}".format(a, b, mul(a, b)))
         case "/":
             print("{:d}  {:d} = {:d}".format(a, b, div(a, b)))
-        case _ :
-            print("{}".format("Unknown operator. Available operators: +, -, * and /"))
+        case _:
+            print("{}".format("Unknown operator. Available operators:\
+ +, -, * and /"))
             exit(1)
 
 else:
