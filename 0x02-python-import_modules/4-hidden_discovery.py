@@ -8,7 +8,5 @@ obj = dir(hidden_4)
 nams = list(obj)
 
 for nam in nams:
-    if nam[0] == "_":
-        continue
-
+    if nam[0] is not "_":
         print("{:s}".format(nam))
