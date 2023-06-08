@@ -1,8 +1,4 @@
 #!/usr/bin/bash
 
-pyfile=$PYFILE
-output_file="${pyfile%.py}.pyc"
-
-echo "Compiling $pyfile ..."
-echo -e "#!/usr/bin/python3\n" | cat - "$pyfile" | \
-	     python3 -m compileall -b "$pyfile" > /dev/null 2>&1
+python -c "import py_compile; \
+	       py_compile.compile('$PYFILE', '$PYFILE' + 'C')"
