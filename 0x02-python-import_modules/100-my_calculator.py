@@ -14,16 +14,14 @@ operator = argv[2]
 
 a = int(argv[1])
 b = int(argv[3])
-match operator:
-    case "+":
-        print("{} + {} = {}".format(a, b, add(a, b)))
-    case "-":
-        print("{} - {} = {}".format(a, b, sub(a, b)))
-    case "*":
-        print("{} * {} = {}".format(a, b, mul(a, b)))
-    case "/":
-        print("{} / {} = {}".format(a, b, div(a, b)))
-    case _:
-        print("{}".format("Unknown operator. Available operators:\
- +, -, * and /"))
-        exit(1)
+if operator == "+":
+    print("{} + {} = {}".format(a, b, add(a, b)))
+elif operator == "-":
+    print("{} - {} = {}".format(a, b, sub(a, b)))
+elif operator == "*":
+    print("{} * {} = {}".format(a, b, mul(a, b)))
+elif operator == "/":
+    print("{} / {} = {}".format(a, b, div(a, b)))
+else:
+    print("{}".format("Unknown operator. Available operators:+, -, * and /"))
+    exit(1)
