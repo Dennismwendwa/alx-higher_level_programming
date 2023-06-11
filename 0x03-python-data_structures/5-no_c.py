@@ -2,7 +2,5 @@
 
 def no_c(my_string):
     if my_string:
-        my_str = my_string.translate({ord(ch): None for ch in "Cc"})
-
-
+        my_str = my_string.translate({ord(ch): None for ch in "cC"})
     return my_str
