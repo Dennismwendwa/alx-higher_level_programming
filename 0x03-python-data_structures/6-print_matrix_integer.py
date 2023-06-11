@@ -6,6 +6,6 @@ def print_matrix_integer(matrix=[[]]):
             if c == r[-1]:
                 print("{:d}".format(c), end="")
             else:
-                 print("{:d}".format(c), end=" ")
-        
+                print("{:d}".format(c), end=" ")
+
         print("")
