@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 def no_c(my_string):
-    my_str = list(my_string)
-    [my_str.remove(n) for n in my_str if n == "c" or n == "C"]
+    if my_string:
+        my_str = my_string.translate({ord(ch): None for ch in "Cc"})
 
-    my_string = "".join(my_str)
-    return my_string
+
+    return my_str
