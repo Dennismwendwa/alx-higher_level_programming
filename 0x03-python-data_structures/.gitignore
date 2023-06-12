@@ -10,3 +10,6 @@
 10-main.py
 *.pyc
 11-main.py
+13-main.c
+palindrome
+linked_lists.c
