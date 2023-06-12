@@ -30,7 +30,7 @@ int going_in_circle(listint_t *lf, listint_t *end, int s)
 
 
 /**
-  * palindrome - checking weather singly-linked list is
+  * is_palindrome - checking weather singly-linked list is
   * @head:- start node of list
   * Return:- Always 0
   */
@@ -62,7 +62,7 @@ int is_palindrome(listint_t **head)
 	if ((len % 2) != 0 && len != 1)
 	{
 		dck = dck->next;
-		len = len -1;
+		len = len - 1;
 
 	}
 
