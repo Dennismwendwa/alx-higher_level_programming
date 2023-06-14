@@ -4,10 +4,8 @@ if __name__ == "__main__":
     import sys
     import hidden_4
 
-obj = dir(hidden_4)
-nams = list(obj)
+objects = list(dir(hidden_4))
 
-for nam in nams:
-    if nam[0] == "_":
-        continue
-        print("{:s}".format(nam))
+for item in objects:
+    if item[0] is not "_":
+        print("{:s}".format(item))
