@@ -1,7 +1,17 @@
 #!/usr/bin/python3
+"""
+This is a class model
+"""
+
 
 class Square:
-    def __init__(self, size=0):
+    def __init__(self, size=0) -> None:
+        """
+        Class atributes are here
+
+        Attributes:
+        size: size
+        """
 
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
