@@ -5,12 +5,15 @@ This is a class model
 
 
 class Square:
+
+    """Class square with attributes"""
+
     def __init__(self, size=0) -> None:
         """
         Class atributes are here
 
         Attributes:
-        size: size
+            size: size
         """
 
         if not isinstance(size, int):
