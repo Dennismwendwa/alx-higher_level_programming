@@ -6,9 +6,14 @@ This is class square
 
 
 class Square:
+
+    """Class square with attributes"""
+
     def __init__(self, size) -> None:
         """
         class attributes are here
-        size: size
+
+        Attributes:
+            size: size
         """
         self.__size = size
