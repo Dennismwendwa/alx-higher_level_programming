@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""This is class MagicClass"""
+"""This is class MagicClass with its attributes"""
 
 
 import math
 
 
 class MagicClass:
-    """Attributes of the class"""
-
     def __init__(self, radius=0):
-        """Attributes
+        """
+        This are the attributes of this class
+        Attributes:
             radius: radius
         """
         self.__radius = 0
@@ -20,8 +20,8 @@ class MagicClass:
 
     """This method returns area"""
     def area(self):
-        return self.__radius **2 * math.pi
+        return (self.__radius **2 * math.pi)
 
     """This method return circumference"""
     def circumference(self):
-        return 2 * math.pi * self.__radius
+        return (2 * math.pi * self.__radius)
