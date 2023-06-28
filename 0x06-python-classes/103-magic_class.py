@@ -20,7 +20,7 @@ class MagicClass:
 
     """This method returns area"""
     def area(self):
-        return (self.__radius **2 * math.pi)
+        return (self.__radius ** 2 * math.pi)
 
     """This method return circumference"""
     def circumference(self):
