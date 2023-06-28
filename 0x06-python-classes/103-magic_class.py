@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This is class MagicClass"""
-
+import math
 
 class MagicClass:
     """Attributes of the class"""
