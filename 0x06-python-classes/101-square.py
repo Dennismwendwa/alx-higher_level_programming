@@ -86,4 +86,5 @@ class Square:
 
             output += "\n"
 
+
         return output
