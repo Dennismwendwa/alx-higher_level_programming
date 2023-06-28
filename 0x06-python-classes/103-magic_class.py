@@ -6,12 +6,15 @@ import math
 
 
 class MagicClass:
+    """This are the attributes"""
+
     def __init__(self, radius=0):
         """
         This are the attributes of this class
         Attributes:
             radius: radius
         """
+
         self.__radius = 0
 
         if type(radius) is not int and type(radius) is not float:
