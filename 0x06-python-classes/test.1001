@@ -39,11 +39,14 @@ class Square:
     """This method sets position"""
     @position.setter
     def position(self, value):
-        if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not all(isinstance(num, int) and num >= 0 for num in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
+        if not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2 positive integer")
+        elif not all(isinstance(num, int) and num >= 0 for num in value):
+            raise TypeError("position must be a tuple of 2 positive integer")
+        elif len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integer")
+        else:
+            self.__position = value
 
     """This method returns are"""
     def area(self):
@@ -54,19 +57,34 @@ class Square:
         if self.__size == 0:
             print()
             return
+
         for _ in range(self.__position[1]):
             print()
+
         for _ in range(self.__size):
-            print(" " * self.__position[0], end="")
-            print("#" * self.__size)
+            for _ in range(self.__position[0]):
+                print(" ", end="")
+            for _ in range(self.__size):
+                print("#", end="")
+            print()
 
     """This method define square representation"""
     def __str__(self):
-        squ = ""
         if self.__size == 0:
-            return squ
+            return ""
 
-        squ += "\n" * self.__position[1]
+        output = ""
+        for _ in range(self.__position[1]):
+            output += "\n"
+
         for _ in range(self.__size):
-            squ += " " * self.__position[0] + "#" * self.__size + "\n"
-        return squ[:-1]
+            for _ in range(self.__position[0]):
+                output += " "
+
+            for _ in range(self.__size):
+                output += "#"
+
+            output += "\n"
+
+
+        return output
