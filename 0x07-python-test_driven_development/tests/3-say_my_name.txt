@@ -1,0 +1,36 @@
+This function prints the first and last names
++++++++++++++++++++++++++++++++++++++++++++++
+
+It takes two args and they must be strings
+++++++++++++++++++++++++++++++++++++++++++
+
+import function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+testing if first name is string
++++++++++++++++++++++++++++++++
+
+>>> say_my_name(34, "dennis")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+testing if last name is a string
+++++++++++++++++++++++++++++++++
+
+>>> say_my_name("dennis", 34)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+testing for the default value
++++++++++++++++++++++++++++++
+
+>>> say_my_name("Dennis")
+My name is Dennis 
+
+testing for first and last names
+++++++++++++++++++++++++++++++++
+
+>>> say_my_name("Dennis", "Mwendwa")
+My name is Dennis Mwendwa
