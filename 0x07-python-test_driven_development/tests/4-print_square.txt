@@ -1,0 +1,54 @@
+This function prints square in #
+++++++++++++++++++++++++++++++++
+
+It takes only one arg and must be a integer
+
+import the function
+>>> print_square = __import__('4-print_square').print_square
+
+testing if size is string
+++++++++++++++++++++++++++
+
+>>> print_square("6")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+testing if size is float
++++++++++++++++++++++
+
+>>> print_square(6.6)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+testing if size is negative
++++++++++++++++++++++++++++
+
+>>> print_square(-6)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+
+testing for positive
+++++++++++++++++++++
+
+>>> print_square(6)
+######
+######
+######
+######
+######
+######
+
+testing for 0
++++++++++++++
+
+>>> print_square(0)
+
+testing for size 2
+++++++++++++++++++
+
+>>> print_square(2)
+##
+##
