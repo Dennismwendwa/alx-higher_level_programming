@@ -1,0 +1,47 @@
+Tests for add_integer Function
+==============================
+>>> add_integer = __import__("0-add_integer").add_integer
+
+check if both values are ints or float
+>>> add_integer(7, 6)
+13
+
+
+>>> add_integer(5.2, 4)
+9
+
+
+>>> add_integer(0, -3)
+-3
+
+
+>>> add_integer(-3, -3)
+-6
+
+Always return integer
+>>> add_integer(4.4, 2.4)
+6
+
+
+default value
+>>> add_integer(8)
+106
+
+
+raising exceptions when required
+>>> add_integer("ten")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+>>> add_integer(5, "ten")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+
+>>> add_integer(4, float("ten"))
+Traceback (most recent call last):
+...
+ValueError: could not convert string to float: 'ten'
