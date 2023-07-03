@@ -1,0 +1,71 @@
+These are the test for function matrix_mul
+++++++++++++++++++++++++++++++++++++++++++
+
+This function takes two args of type ints or floats
+
+Import modele
++++++++++++++
+
+>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+test for matrix if not list
++++++++++++++++++++++++++++
+
+>>> matrix_mul([1, 2, [3, 4]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+
+test for second arg if not list
++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], 3, 4])
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+
+testing if arg one matrix is empty
+++++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+testing if second matrix is empty
++++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+testing if matrix of arg 1 is rectangle(all rows of some size)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+
+testing if matrix of arg 2 is rectangle
++++++++++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([[1, 2], [3, 4]], [[2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
+
+testing if matrices can be multiplied
++++++++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+
+testing for matrices which meets all requirements
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
