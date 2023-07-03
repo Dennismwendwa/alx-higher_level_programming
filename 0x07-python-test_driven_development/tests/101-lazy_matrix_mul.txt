@@ -1,0 +1,27 @@
+These are test fo lazy_matrix_mul
++++++++++++++++++++++++++++++++++
+
+importing module
+>>> import numpy as np
+>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+testing if is rectangle matrix
+++++++++++++++++++++++++++++++
+
+>>> resl = lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+>>> resl.tolist()
+[[7, 10], [15, 22]]
+
+testing for not matrix. (matrix of different size)
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+
+testing for empty matrices
+++++++++++++++++++++++++++
+
+>>> lazy_matrix_mul([[]], [[]])
+Traceback (most recent call last):
+ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
