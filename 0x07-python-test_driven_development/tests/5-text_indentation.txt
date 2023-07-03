@@ -1,0 +1,37 @@
+Function that prints string
++++++++++++++++++++++++++++
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+testing if text is string
++++++++++++++++++++++
+
+>>> text_indentation(6)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+testing different strings
++++++++++++++++++++++++++
+
+>>> text_indentation("Beautiful is better than ugly. Explicit is implicit.")
+Beautiful is better than ugly.
+<BLANKLINE>
+Explicit is implicit.
+<BLANKLINE>
+
+>>> text_indentation("Sparse is better than dense: Readability counts?")
+Sparse is better than dense:
+<BLANKLINE>
+Readability counts?
+<BLANKLINE>
+
+>>> text_indentation("1234567. 890987? What is this?:")
+1234567.
+<BLANKLINE>
+890987?
+<BLANKLINE>
+What is this?
+<BLANKLINE>
+:
+<BLANKLINE>
