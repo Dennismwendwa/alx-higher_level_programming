@@ -3,6 +3,7 @@
 This is class Rectangle
 """
 
+
 class Rectangle:
-	"""These are the attributes of the class"""
-	pass
+    """These are the attributes of the class"""
+    pass
