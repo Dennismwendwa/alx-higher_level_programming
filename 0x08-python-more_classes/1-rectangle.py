@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-These is class Rectangle
+These is class Rectangle with two method
 """
 
 
