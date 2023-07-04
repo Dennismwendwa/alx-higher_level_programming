@@ -6,60 +6,63 @@ This class solves the N-queen puzzle challenge
 
 from sys import argv
 
-if __name__ == "__main__":
+def if_safe(board, row col):
 
+    for i in range(row):
+        if board[i][col] == 1:
+            return False
+
+    i = row
+    j = col
+
+    while i >= 0 and j >= 0:
+        if board[i][j] == 1:
+            return False
+
+        i -= 1
+        j -= 1
+
+    i = row
+    j = col
+
+    while i >= 0 and j < len(board):
+        if board[i][j] == 1:
+            return False
+
+        i -= 1
+        j += 1
+
+    return True
+
+def nqueen_game(n):
+
+    def  util(board, row):
+        if row == n:
+            print(board)
+            return
+
+        for col in range(n):
+            if if_safe(board, row, col):
+                board[row][col] = 1
+                util(board, row + 1)
+                board[row][col] = 0
+
+        board = [[0] * n for _ in range(n)]
+        util(board, 0)
+
+if __name__ == "__main__":
     if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
 
-    if not argv[1].isdigit():
-        print("N must be a number")
-        exit(1)
-
-    n = int(argv[1])
-    if n < 4:
+    
+    N = int(argv[1])
+    if N < 4:
         print("N must be at least 4")
         exit(1)
 
-    choice = []
-    for f in range(n):
-        choice.append([f, None])
+    if N.isdigit() is false:
+        print("N must be a number")
+        exit(1)
 
-    """check status of the queen"""
-    def status(y):
-        for z in range(n):
-            if y == choice[z][1]:
-                return True
-            else:
-                return False
-
-    """checking the status of the solution at hand"""
-    def solution_sts(z, y):
-        if (status(y)):
-            return False
-
-        w = 0
-        while (w < z):
-            if abs(choice[w][1] - y) == abs(w - z):
-                return False
-
-            w += 1
-        return True
-
-    """We empty the choice list here"""
-    def empty_choice(z):
-        for w in range(z, n):
-            choice[w][1] = None
-
-    """we are selecting all possible choices"""
-    def tracker(z):
-        for y in range(n):
-            empty_choice(z)
-            if solution_sts(z, y):
-                choice[z][1] = y
-                if (z == n - 1):
-                    print(a)
-                else:
-                    tracker(z + 1)
-
-        tracker(0)
+    nqueen_game(N)
