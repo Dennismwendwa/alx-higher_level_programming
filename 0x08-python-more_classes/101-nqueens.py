@@ -6,7 +6,7 @@ This class solves the N-queen puzzle challenge
 
 from sys import argv
 
-def if_safe(board, row col):
+def if_safe(board, row, col):
 
     for i in range(row):
         if board[i][col] == 1:
