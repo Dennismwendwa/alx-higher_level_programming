@@ -9,3 +9,4 @@ __pycache__
 6-max_integer.py
 tests/100-matrix_mul.py
 101-main.py
+102-tests.py
