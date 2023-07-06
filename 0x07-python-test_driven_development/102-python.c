@@ -1,10 +1,10 @@
 #include "cpython.h"
-
 /**
  * print_python_string - function that printd cpython strings
  * @p:- pointer to the object
  * Return:- Always 0
  */
+
 
 void print_python_string(PyObject *p)
 {
