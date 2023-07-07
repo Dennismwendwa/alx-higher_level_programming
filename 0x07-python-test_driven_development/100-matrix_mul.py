@@ -6,6 +6,7 @@ The elements of the matrices must be list of int or floats
 
 
 def matrix_mul(m_a, m_b):
+    """This function multipy matrix"""
 
     status = check_if_list(m_a)
     if status == "False":
@@ -58,6 +59,8 @@ def matrix_mul(m_a, m_b):
 
 
 def check_if_list(m_a):
+    """We are checking if its list"""
+
     if len(m_a) == 0:
         return "empty"
 
@@ -67,6 +70,8 @@ def check_if_list(m_a):
 
 
 def check_if_list_of_list(m_a):
+    """We are checking if its list of lists"""
+
     for element in m_a:
 
         if not isinstance(element, list):
@@ -78,6 +83,8 @@ def check_if_list_of_list(m_a):
 
 
 def int_or_float(m_a):
+    """We are checking if values are floats"""
+
     for elements in m_a:
         for element in elements:
             if not isinstance(element, (int, float)):
@@ -87,6 +94,8 @@ def int_or_float(m_a):
 
 
 def equal_rows(m_a):
+    """we are checking if rows are equal"""
+
     size = len(m_a[0])
     for elements in m_a[1:]:
         if len(elements) != size:
