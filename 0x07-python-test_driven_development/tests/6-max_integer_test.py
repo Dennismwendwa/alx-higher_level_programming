@@ -13,20 +13,20 @@ class TestMaxInteger(unittest.TestCase):
 		self.assertEqual(max_integer([99, 134, 84, 55, 45]), 134)
 
 	def test_max_negative(self):
-        self.assertEqual(max_integer([0]), 0)
-        self.assertEqual(max_integer([9, 7, 16]), 16)
+		self.assertEqual(max_integer([0]), 0)
+		self.assertEqual(max_integer([9, 7, 16]), 16)
 		self.assertEqual(max_integer([-1, -2, 3, 4]), 4)
 		self.assertEqual(max_integer([21.3, 42.7, 6.5, 0.54]), 42.7)
 		self.assertEqual(max_integer([-2434, -4335, -6573, -1111]), -1111)
-        self.assertEqual(max_integer([{2, 5}, {2}]), {2, 5})
+		self.assertEqual(max_integer([{2, 5}, {2}]), {2, 5})
 
 	def test_float_integer(self):
 		self.assertEqual(max_integer([-6.1, -23.2, -3.43, -1.1]), -1.1)
 		self.assertEqual(max_integer([1.2, 12.0, 24.8, 20.5]), 24.8)
 		self.assertEqual(max_integer([999, 0.001, 1000, 344.2, 568.9]), 1000)
 
-    def test_string(self):
-        self.assertEqual(max_integer(["d", "y", "r"]), 'y')
+	def test_string(self):
+		self.assertEqual(max_integer(["d", "y", "r"]), 'y')
 
 	def test_raises_error(self):
 		with self.assertRaises(TypeError):
