@@ -7,6 +7,8 @@ size must be grater than 0
 
 
 def print_square(size):
+    """This function prints square"""
+
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
