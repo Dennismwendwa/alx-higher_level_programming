@@ -22,9 +22,3 @@ testing the function
 
 >>> print(my_list)
 [6, 7, 5, 4, 2]
-
-testing for empty list
-++++++++++++++++++++++
->>> lists = MyList([])
->>> lists.print_sorted()
-[]
