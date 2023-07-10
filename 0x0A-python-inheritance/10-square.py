@@ -10,10 +10,9 @@ class Square(Rectangle):
         """this are the attributes"""
         self.__size = size
         self.integer_validator("size", size)
-       #  super().__init__(self.__size, self.__size)
 
-    """This method returns the area"""
     def area(self):
+        """This method returns the area"""
         return self.__size * self.__size
 
     """this is str method"""
