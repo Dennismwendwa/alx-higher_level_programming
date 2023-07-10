@@ -3,5 +3,6 @@
 
 
 def lookup(obj):
-    avil = list(dir(obj))
+    """function that returns list of the objects"""
+    avil = dir(obj)
     return avil
