@@ -2,8 +2,8 @@
 """checking if is instance of class"""
 
 
-"""this method checkis if is instance"""
 def is_same_class(obj, a_class):
+    """this method checkis if is instance"""
     
     if type(obj) == a_class:
         return True
