@@ -3,11 +3,7 @@
 
 
 class BaseGeometry:
-    """This are the attributes
-    attributes:
-        name: name
-        value: value
-    """
+    """This are the attributes and methods"""
 
     def area(self):
         raise Exception("area() is not implemented")
