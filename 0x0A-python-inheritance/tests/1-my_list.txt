@@ -7,28 +7,21 @@ importing the class
 
 testing the function
 ++++++++++++++++++++
->>> lists = MyList([5, 8, 10, 6, 4])
+>>> my_list = MyList()
+>>> my_list.append(6)
+>>> my_list.append(7)
+>>> my_list.append(5)
+>>> my_list.append(4)
+>>> my_list.append(2)
 
-printing the list
-+++++++++++++++++
->>> print(lists)
-[5, 8, 10, 6, 4]
+>>> print(my_list)
+[6, 7, 5, 4, 2]
 
-printing the sorted list
-++++++++++++++++++++++++
->>> lists.print_sorted()
-[4, 5, 6, 8, 10]
+>>> my_list.print_sorted()
+[2, 4, 5, 6, 7]
 
-printing the list again to checked if it changed
-++++++++++++++++++++++++++++++++++++++++++++++++
->>> print(lists)
-[5, 8, 10, 6, 4]
-
-testing for string elemets
-++++++++++++++++++++++++++
->>> lists = MyList(["milly", "dennis", "python", "c", "java"])
->>> lists.print_sorted()
-['c', 'dennis', 'java', 'milly', 'python']
+>>> print(my_list)
+[6, 7, 5, 4, 2]
 
 testing for empty list
 ++++++++++++++++++++++
