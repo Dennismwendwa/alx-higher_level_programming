@@ -22,3 +22,11 @@ testing the function
 
 >>> print(my_list)
 [6, 7, 5, 4, 2]
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
