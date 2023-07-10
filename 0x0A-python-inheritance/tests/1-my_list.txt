@@ -1,18 +1,37 @@
->>> Mylist = __import__("1-my_list").MyList
->>> import sys
+This is my list class
++++++++++++++++++++++
 
->>> lists = Mylist()
->>> lists.append(5)
->>> lists.append(8)
->>> lists.append(10)
->>> lists.append(6)
->>> lists.append(4)
+importing the class
++++++++++++++++++++
+>>> MyList = __import__("1-my_list").MyList
 
+testing the function
+++++++++++++++++++++
+>>> lists = MyList([5, 8, 10, 6, 4])
+
+printing the list
++++++++++++++++++
 >>> print(lists)
 [5, 8, 10, 6, 4]
 
+printing the sorted list
+++++++++++++++++++++++++
 >>> lists.print_sorted()
 [4, 5, 6, 8, 10]
 
+printing the list again to checked if it changed
+++++++++++++++++++++++++++++++++++++++++++++++++
 >>> print(lists)
 [5, 8, 10, 6, 4]
+
+testing for string elemets
+++++++++++++++++++++++++++
+>>> lists = MyList(["milly", "dennis", "python", "c", "java"])
+>>> lists.print_sorted()
+['c', 'dennis', 'java', 'milly', 'python']
+
+testing for empty list
+++++++++++++++++++++++
+>>> lists = MyList([])
+>>> lists.print_sorted()
+[]
