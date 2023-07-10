@@ -3,35 +3,28 @@ This is geometry class
 
 importing the class
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
+>>> import sys
 creating instance of class
 >>> bg = BaseGeometry()
 
 testing for right args
 >>> bg.integer_validator("length", 24)
-
-testing for typeerror
-
-testing for negative
->>> bg.integer_validator("length", -10)
-Traceback (most recent call last):
+>>> bg.integer_validator("length", 62)
+>>> try:
+...    integer_validator("name", "tony")
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e)
 ...
-ValueError: length must be greater than 0
-
-testing for no value
->>> bg.integer_validator("", 24)
-
-testing for 0
->>> bg.integer_validator("length", 0)
-Traceback (most recent call last):
+[TypeError] name must be an integer
+>>> try:
+... integer_validator("height", 0)
+... excep Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
 ...
-ValueError: length must be greater than 0
-
-testing for no values
->>> bg.integer_validator()
-Traceback (most recent call last):
+[ValueError] height must be greater than 0
+>>> try:
+...    integer_validator("length", -10)
+... except Exception as e:
+...    print("[{}] {}".format(e.__class__.__name__, e))
 ...
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-testing for one arg
->>> bg.integer_validator("", 24)
+[ValueError] length must be greater than 0
