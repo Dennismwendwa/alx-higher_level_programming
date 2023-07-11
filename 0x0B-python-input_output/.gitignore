@@ -1,2 +1,6 @@
 0-main.py
 my_file_0.txt
+__pycache__
+1-main.py
+2-main.py
+*.txt
