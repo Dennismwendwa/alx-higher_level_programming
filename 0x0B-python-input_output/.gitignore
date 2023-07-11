@@ -6,3 +6,7 @@ __pycache__
 *.txt
 3-main.py
 4-main.py
+5-main.py
+my_fake.json
+6-main.py
+*.json
