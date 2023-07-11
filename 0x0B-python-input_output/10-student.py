@@ -14,7 +14,6 @@ class Student:
         self.last_name = last_name
         self.first_name = first_name
 
-
     """This method retrieves dict representation"""
     def to_json(self, attrs=None):
         if attrs is None or not isinstance(attrs, list):
