@@ -7,7 +7,7 @@ json.dump(my_obj, file, ensure_ascii=False, indent=4)
 
 def save_to_json_file(my_obj, filename):
     """This function writes json to file
-    aparamitors:
+    Arguments:
         my_obj: object
         filename: file
         """

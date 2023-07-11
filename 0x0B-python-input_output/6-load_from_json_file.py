@@ -4,8 +4,8 @@
 
 def load_from_json_file(filename):
     """
-    this function reads json from file, convert to python object
-    parameters: filename
+    This function reads json from file, convert to python object
+    Arguments: filename
     """
     import json
     with open(filename, mode="r", encoding="utf-8") as file:
