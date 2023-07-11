@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-import json
-"""This function loads json dtring"""
+"""This function loads json string"""
 
 
 def from_json_string(my_str):
-    """loading json string"""
+    """
+    This function return python object reprecentation of string
+    Argmumets:
+        my_str: string
+    """
+    import json
     return json.loads(my_str)
