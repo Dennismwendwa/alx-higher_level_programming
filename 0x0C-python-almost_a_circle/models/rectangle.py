@@ -85,7 +85,11 @@ class Rectangle(Base):
 
     """this method prints rectangle using #"""
     def display(self):
+        for k in range(self.y):
+            print() # offset for y-coordinate
         for _ in range(self.__height):
+            for _ in range(self.x):
+                print(" ", end="") # offset for x-coordinate
             print("#" * self.__width)
 
     """this method prints rectangle repricentation (__str__)"""
