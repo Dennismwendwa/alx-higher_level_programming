@@ -4,6 +4,7 @@
 
 import json
 import csv
+from turtle import Turtle, Screen
 
 
 class Base:
@@ -84,11 +85,12 @@ class Base:
         filename = cls.__name__ + ".csv"
         with open(filename, mode="w", encoding="utf-8") as file:
             writer = csv.writer(file)
-            
+
             if list_objs is not None and len(list_objs) > 0:
                 if cls.__name__ == "Rectangle":
                     for obj in list_objs:
-                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                        writer.writerow([obj.id, obj.width,
+                                         obj.height, obj.x, obj.y])
 
                 elif cls.__name__ == "Square":
                     for obj in list_objs:
@@ -106,40 +108,77 @@ class Base:
 
                 for row in reader:
                     if cls.__name__ == "Rectangle":
-                        instance = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                        instance = cls(int(row[1]), int(row[2]), int(row[3]),
+                                       int(row[4]), int(row[0]))
                     elif cls.__name__ == "Square":
-                        instance = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                        instance = cls(int(row[1]), int(row[2]),
+                                       int(row[3]), int(row[0]))
                     objs.append(instance)
         except FileNotFoundError:
             return objs
         return objs
 
+    """This method draw rectangle and square"""
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        screen = Screen()
+        turtle = Turtle()
+        turtle.speed(2)
 
+        colors = ["red", "green", "blue", "orange",
+                  "purple", "yellow", "black"]
+        color_index = 0
 
+        for rectangle in list_rectangles:
+            turtle.penup()
+            turtle.goto(rectangle.x, rectangle.y)
+            turtle.pendown()
 
+            turtle.fillcolor(colors[color_index % len(colors)])
+            turtle.begin_fill()
 
+            for _ in range(2):
+                turtle.forward(rectangle.width)
+                turtle.right(90)
+                turtle.forward(rectangle.height)
+                turtle.right(90)
 
+            turtle.end_fill()
+            color_index += 1
 
+        for square in list_squares:
+            turtle.penup()
+            turtle.goto(square.x, square.y)
+            turtle.pendown()
 
+            turtle.fillcolor(colors[color_index % len(colors)])
+            turtle.begin_fill()
 
+            for _ in range(4):
+                turtle.forward(square.size)
+                turtle.right(90)
 
+            turtle.end_fill()
+            color_index += 1
 
+        list_spirals = [
+                {"length": 10, "angle": 90, "x": -100, "y": 0},
+                {"length": 20, "angle": 65,  "x": -100, "y": 320},
+                {"length": 80, "angle": 40,  "x": 0, "y": -300},
+                {"length": 100, "angle": 70, "x": 10, "y": 300},
+                ]
 
+        for spiral in list_spirals:
+            turtle.penup()
+            turtle.goto(spiral["x"], spiral["y"])
+            turtle.pendown()
 
+            angle = spiral["angle"]
+            length = spiral["length"]
 
+            for _ in range(20):
+                turtle.forward(length)
+                turtle.right(angle)
+                length += 5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        screen.exitonclick()
