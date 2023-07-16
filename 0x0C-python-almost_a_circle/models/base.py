@@ -23,6 +23,7 @@ class Base:
             self.id = Base.__nb_objects
 
     """this method returns JSON strings"""
+    @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
@@ -40,3 +41,24 @@ class Base:
 
         with open(filename, mode="w", encoding="utf-8") as file:
             file.write(json_string)
+
+    """this method returns lists of dictionary"""
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
+
+    """this method creates any instance of class"""
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Rectangle":
+            dummy = cls(2, 2)
+        elif cls.__name__ == "Square":
+            dummy = cls(3)
+        else:
+            dumpy = cls()
+
+        dummy.update(**dictionary)
+        return dummy
