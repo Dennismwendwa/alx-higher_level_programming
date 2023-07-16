@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -76,3 +77,69 @@ class Base:
                 return instance
         except FileNotFoundError:
             return []
+
+    """this method writes to csv file"""
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, mode="w", encoding="utf-8") as file:
+            writer = csv.writer(file)
+            
+            if list_objs is not None and len(list_objs) > 0:
+                if cls.__name__ == "Rectangle":
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+
+                elif cls.__name__ == "Square":
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    """This method loads from file"""
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        objs = []
+
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                reader = csv.reader(file)
+
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        instance = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    elif cls.__name__ == "Square":
+                        instance = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    objs.append(instance)
+        except FileNotFoundError:
+            return objs
+        return objs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
