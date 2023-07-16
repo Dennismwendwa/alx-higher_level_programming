@@ -83,4 +83,11 @@ instance with all attributes already set:
 Update the class Base by adding the class method def load_from_file(cls): that returns a list
 of instances:
 
+20. JSON ok, but CSV?
+Update the class Base by adding the class methods def save_to_file_csv(cls, list_objs): and
+def load_from_file_csv(cls): that serializes and deserializes in CSV:
+
+21. Let's draw it
+Update the class Base by adding the static method def draw(list_rectangles, list_squares):
+that opens a window and draws all the Rectangles and Squares:
 
