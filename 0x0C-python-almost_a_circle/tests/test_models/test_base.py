@@ -129,3 +129,4 @@ class TestBase(unittest.TestCase):
 
             self.assertEqual(len(rows), 1)
             self.assertEqual(rows[0], ["12", "33", "34", "35"])
+
