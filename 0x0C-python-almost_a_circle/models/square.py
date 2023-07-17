@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This is class square"""
+"""
+This is class square with its attributes and methods
+"""
 
 
 from models.rectangle import Rectangle
@@ -11,23 +13,23 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
-    """this method returns string reprecentation of square"""
     def __str__(self):
+        """this method returns string reprecentation of square"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
-    """This method returns size"""
     @property
     def size(self):
+        """This method returns size"""
         return self.width
 
-    """This method sets size"""
     @size.setter
     def size(self, value):
+        """This method sets size"""
         self.width = value
         self.height = value
 
-    """This method sets attributes using argsa and kwargs"""
     def update(self, *args, **kwargs):
+        """This method sets attributes using argsa and kwargs"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -41,8 +43,8 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-    """This method return dictionary representation of square"""
     def to_dictionary(self):
+        """This method return dictionary representation of square"""
         return {
                 "id": self.id,
                 "size": self.size,
