@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""This is class rectangle"""
+"""
+This is class rectangle with its attributes and methods
+"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """this is class rectangle"""
+    """this is class rectangle attributes"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """this is the contructor of this class
@@ -22,68 +24,68 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
-    """This method returns width"""
     @property
     def width(self):
+        """This method returns width"""
         return self.__width
 
-    """This method sets width"""
     @width.setter
     def width(self, value):
+        """This method sets width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
-    """this method returns height"""
     @property
     def height(self):
+        """this method returns height"""
         return self.__height
 
-    """this method sets the height"""
     @height.setter
     def height(self, value):
+        """this method sets the height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
-    """This method returns x"""
     @property
     def x(self):
+        """This method returns x"""
         return self.__x
 
-    """this method sets x"""
     @x.setter
     def x(self, value):
+        """this method sets x"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
 
-    """This method returns y"""
     @property
     def y(self):
+        """This method returns y"""
         return self.__y
 
-    """this method sets y"""
     @y.setter
     def y(self, value):
+        """this method sets y"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    """this method reurns area"""
     def area(self):
+        """this method reurns area"""
         return self.__width * self.__height
 
-    """this method prints rectangle using #"""
     def display(self):
+        """this method prints rectangle using #"""
         for k in range(self.y):
             print()  # offset for y-coordinate
         for _ in range(self.__height):
@@ -91,15 +93,15 @@ class Rectangle(Base):
                 print(" ", end="")  # offset for x-coordinate
             print("#" * self.__width)
 
-    """this method prints rectangle repricentation (__str__)"""
     def __str__(self):
+        """this method prints rectangle repricentation (__str__)"""
         return (
                 f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
                 f"{self.width}/{self.height}"
                 )
 
-    """this method uses *args to assign attributes"""
     def update(self, *args, **kwargs):
+        """this method uses *args to assign attributes"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -115,8 +117,8 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
-    """this method returns dictionary representation of rectangle"""
     def to_dictionary(self):
+        """this method returns dictionary representation of rectangle"""
         return {
                 "id": self.id,
                 "width": self.width,
