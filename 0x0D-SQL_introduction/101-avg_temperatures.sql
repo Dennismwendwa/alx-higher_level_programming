@@ -1,4 +1,4 @@
 -- prints tenpreture average
-SELECT city, AVG(valu) as avg_temp
-FROM temperature GROUP BY city
+SELECT city, AVG(value) as avg_temp
+FROM temperatures GROUP BY city
 ORDER BY avg_temp DESC;
