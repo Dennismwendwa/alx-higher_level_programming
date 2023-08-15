@@ -29,6 +29,7 @@ def nqueen_game(n):
             if is_safe(board, row, col):
                 board[row] = col
                 util(board, row + 1)
+                board[row] = -1
 
     if not str(n).isdigit():
         print("N must be a number")
