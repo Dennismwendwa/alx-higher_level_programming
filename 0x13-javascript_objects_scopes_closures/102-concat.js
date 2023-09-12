@@ -11,6 +11,5 @@ const allContent = file1Content + file2Content;
 fs.writeFile(process.argv[4], allContent, 'utf-8', (errors) => {
   if (errors) {
     console.error(errors);
-    return;
   }
 });
