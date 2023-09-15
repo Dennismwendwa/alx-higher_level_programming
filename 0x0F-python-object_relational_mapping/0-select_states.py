@@ -35,7 +35,7 @@ if __name__ == "__main__":
     except MySQLdb.Error as e:
         pass
         sys.exit(1)
-    
+
     finally:
         cursor.close()
         db.close()
