@@ -16,7 +16,7 @@ if len(sys.argv) != 4:
 
     try:
         db = MySQLdb.connect(
-                host="localhost", port=3306, user=username,password=password,
+                host="localhost", port=3306, user=username, password=password,
                 db=database_name
                 )
         cursor = db.cursor()
