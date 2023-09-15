@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that takes arguments and display all values of states
+Script that uses parameterized queries to safely insert args
+avoiding SQL injection
 """
 
 if __name__ == "__main__":
@@ -27,8 +28,8 @@ if __name__ == "__main__":
                 db=database_name
                 )
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM states WHERE name LIKE BINARY\
-                '{}' ORDER BY id ASC".format(sys.argv[4]))
+        qu = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+        cursor.execute(qu, (state_name,))
         states = cursor.fetchall()
 
         for k in states:
