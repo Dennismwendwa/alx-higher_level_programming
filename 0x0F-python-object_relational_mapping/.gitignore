@@ -1,3 +1,4 @@
 venv
 0-select_states.sql
 4-cities_by_state.sql
+6-model_state.sql
