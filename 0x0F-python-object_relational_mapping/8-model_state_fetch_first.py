@@ -28,6 +28,8 @@ if __name__ == "__main__":
 
     onestate = session.query(State).order_by(State.id).first()
     if onestate is not None:
-        print("{}: {}".format(onestate.id, onestae.name))
+        print("{}: {}".format(onestate.id, onestate.name))
+    else:
+        print("Nothing")
 
     session.close()
