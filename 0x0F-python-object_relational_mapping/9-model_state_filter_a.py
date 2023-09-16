@@ -27,7 +27,7 @@ if __name__ == "__main__":
     session = Session()
 
     states_contain_a = session.query(State).filter(
-            State.name.like('%a%')).orderby(Stae.id).all()
+            State.name.like('%a%')).order_by(State.id).all()
 
     for k in states_contain_a:
         print("{}: {}".format(k.id, k.name))
