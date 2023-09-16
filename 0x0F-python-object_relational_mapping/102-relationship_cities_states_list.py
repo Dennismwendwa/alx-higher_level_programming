@@ -28,6 +28,6 @@ if __name__ == "__main__":
     all_cities = session.query(City).order_by(City.id).all()
 
     for c in all_cities:
-        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
+        print("{}: {} -> {}".format(c.id, c.name, c.state.name))
 
     session.close()
