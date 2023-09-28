@@ -2,10 +2,8 @@
 """Function that finds a peak in list of integers"""
 
 
-"""This function finds peak"""
-
-
 def find_peak(list_of_integers):
+    """This function finds peak"""
     if not list_of_integers:
         return None
 
