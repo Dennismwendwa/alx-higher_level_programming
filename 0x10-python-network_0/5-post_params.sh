@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that sends POST request
-
-url="$1"
-curl -sX "POST" "$url" -d "email=test@gmail.com&subject=I will always be here for PLD"
+curl -sX "POST" "$1" -d "email=test@gmail.com&subject=I will always be here for PLD"
