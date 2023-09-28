@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that display methods allowed
-
-url="$1"
-curl -sI "$url" | grep "Allow" | cut -d " " -f 2-
+curl -sI "$1" | grep "Allow" | cut -d " " -f 2-
