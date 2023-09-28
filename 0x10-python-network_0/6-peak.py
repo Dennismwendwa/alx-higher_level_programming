@@ -1,8 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Function that finds a peak in list of integers"""
 
 
 """This function finds peak"""
+
+
 def find_peak(list_of_integers):
     if not list_of_integers:
         return None
