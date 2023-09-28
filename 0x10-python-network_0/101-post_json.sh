@@ -1,7 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that send JSON POSt
-
-url="$1"
-file="$2"
-
-curl -s "$url" -d "@$file" -X "Content-Type: application/json"
+curl -s "$1" -d "@$2" -X "Content-Type: application/json"

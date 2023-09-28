@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that display status code of response
-
-url="$1"
-curl -so /dev/null -w "%{htt_code}" "$url"
+curl -so /dev/null -w "%{htt_code}" "$1"
