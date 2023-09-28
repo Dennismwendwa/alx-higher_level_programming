@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that uses DELETE request
 
 url="$1"

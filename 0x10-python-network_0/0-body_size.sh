@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # script that returns size of the body of url
 
 url="$1"
