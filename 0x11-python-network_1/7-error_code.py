@@ -4,15 +4,16 @@ import requests
 from sys import argv
 
 
-url = argv[1]
+if __name__ == "__main__":
+    url = argv[1]
 
-try:
-    response = requests.get(url)
+    try:
+        response = requests.get(url)
 
-    if response.status_code >= 400:
-        print("Error code:", response.status_code)
-    else:
-        print(response.text)
+        if response.status_code >= 400:
+            print("Error code:", response.status_code)
+        else:
+            print(response.text)
 
-except requests.exceptions.RequestException as e:
-    pass
+    except requests.exceptions.RequestException as e:
+        pass
