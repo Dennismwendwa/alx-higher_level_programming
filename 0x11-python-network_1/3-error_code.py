@@ -4,7 +4,7 @@ import urllib.request
 from sys import argv
 
 
-if __name == "__main__":
+if __name__ == "__main__":
     url = argv[1]
 
     try:
