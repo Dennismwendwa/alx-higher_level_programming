@@ -4,13 +4,14 @@ import urllib.request
 from sys import argv
 
 
-url = argv[1]
+if __name__ == "__main__":
+    url = argv[1]
 
-try:
-    with urllib.request.urlopen(url) as response:
-        x_request_id = response.info().get("X-Request-Id")
-        if x_request_id is not None:
-            print(x_request_id)
+    try:
+        with urllib.request.urlopen(url) as response:
+            x_request_id = response.info().get("X-Request-Id")
+            if x_request_id is not None:
+                print(x_request_id)
 
-except Exception as e:
-    pass
+    except Exception as e:
+        pass
