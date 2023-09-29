@@ -10,8 +10,8 @@ try:
     response.raise_for_status()
 
     print("Body response:")
-    print("    - type:", type(response.text))
-    print("    - content:", response.text)
+    print("\t- type: {}".format(type(response.text)))
+    print("\t- content: {}".format(response.text))
 
 except requests.exceptions.RequestException as e:
     pass
