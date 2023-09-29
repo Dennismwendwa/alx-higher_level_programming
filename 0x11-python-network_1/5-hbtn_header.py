@@ -4,16 +4,17 @@ import requests
 from sys import argv
 
 
-url = argv[1]
+if __name__ == "__main__":
+    url = argv[1]
 
-try:
-    response = requests.get(url)
-    response.raise_for_status()
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
 
-    x_request_id = response.headers.get("X-Request-Id")
+        x_request_id = response.headers.get("X-Request-Id")
 
-    if x_request_id:
-        print(x_request_id)
+        if x_request_id:
+            print(x_request_id)
 
-except requests.exceptions.RequestException as e:
-    pass
+    except requests.exceptions.RequestException as e:
+        pass
