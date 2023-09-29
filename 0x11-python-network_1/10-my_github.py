@@ -4,24 +4,26 @@ import requests
 from sys import argv
 
 
-username = argv[1]
-token = argv[2]
+if __name__ == "__main__":
 
-url = f"https://api.github.com/user"
+    username = argv[1]
+    token = argv[2]
 
-auth = (username, token)
+    url = "https://api.github.com/user"
 
-try:
-    response = requests.get(url, auth=auth)
-    response.raise_for_status()
+    auth = (username, token)
 
-    user_data = response.json()
-    user_id = user_data.get("id")
+    try:
+        response = requests.get(url, auth=auth)
+        response.raise_for_status()
 
-    if user_id is not None:
-        print(user_id)
-    else:
+        user_data = response.json()
+        user_id = user_data.get("id")
+
+        if user_id is not None:
+            print(user_id)
+        else:
+            print("None")
+
+    except requests.exceptions.RequestException as e:
         print("None")
-
-except requests.exceptions.RequestException as e:
-    print("None")
