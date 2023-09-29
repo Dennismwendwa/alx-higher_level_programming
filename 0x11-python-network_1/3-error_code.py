@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """this script prints the status code of the response"""
 import urllib.request
-import urllib.error
 from sys import argv
 
 
