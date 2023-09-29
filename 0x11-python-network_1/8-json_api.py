@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     try:
         response = requests.post(url, data=data)
-        response.raise_for_ststus()
+        response.raise_for_status()
 
         try:
             json_data = response.json()
