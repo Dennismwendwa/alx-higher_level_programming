@@ -11,9 +11,9 @@ try:
         decode_content = content.decode("utf-8")
 
     print("Body response:")
-    print("    - type:", type(content))
-    print("    - content:", content)
-    print("    - utf8 content:", decode_content)
+    print("\t- type: {}".format(type(content)))
+    print("\t- content: {}".format(content))
+    print("\t- utf8 content: {}".format(decode_content))
 
 except Exception as e:
     pass
