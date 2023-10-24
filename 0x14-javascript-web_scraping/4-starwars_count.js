@@ -10,11 +10,16 @@ request(apiUrl, (error, response, body) => {
     console.error(error);
   } else {
     if (response.statusCode === 200) {
-      const films = JSON.parse(body).results;
-      const wedgeAntillesFilms = films.filter((film) =>
-        film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
-      );
-      console.log(wedgeAntillesFilms.length);
+      const films = JSON.parse(body);
+      let wedgeAntillesFilms = 0;
+      for (const res of films.results) {
+        for (const url of res.characters) {
+          if (url.includes(18)) {
+            wedgeAntillesFilms++;
+          }
+        }
+      }
+      console.log(wedgeAntillesFilms);
     }
   }
 });
