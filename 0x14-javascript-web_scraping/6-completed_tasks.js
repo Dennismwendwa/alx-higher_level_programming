@@ -15,12 +15,15 @@ request(apiUrl, (error, response, body) => {
       const completedTasks = {};
 
       todos.forEach((todo) => {
-        if (completedTasks[todo.userId]) {
-          completedTasks[todo.userId]++;
-        } else {
-          completedTasks[todo.userId] = 1;
+        if (todo.completed) {
+          if (completedTasks[todo.userId]) {
+            completedTasks[todo.userId]++;
+          } else {
+            completedTasks[todo.userId] = 1;
+          }
         }
       });
+
       console.log(completedTasks);
     }
   }
